@@ -1,13 +1,11 @@
 package dev.hannahbanks.banking.controller;
 
 import dev.hannahbanks.banking.dto.AccountDto;
-import dev.hannahbanks.banking.entity.Account;
 import dev.hannahbanks.banking.service.AccountService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Map;
 
 @RestController
