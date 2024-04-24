@@ -6,7 +6,7 @@ public interface AccountService {
 
     AccountDto createAccount(AccountDto account);
 
-//    AccountDto getAllAccounts();
+    AccountDto updateAccountBalance(Long id, double amount);
 
     AccountDto getAccountById(Long id);
 }

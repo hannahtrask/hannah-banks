@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/accounts")
@@ -30,6 +31,14 @@ public class AccountController {
     @GetMapping("/{id}")
     public ResponseEntity<AccountDto> getAccountById(@PathVariable Long id) {
         AccountDto accountDto = accountService.getAccountById(id);
+        return ResponseEntity.ok(accountDto);
+    }
+
+    // put new account balance REST API
+    @PutMapping("/{id}/update")
+    public ResponseEntity<AccountDto> updateAccountBalance(@PathVariable Long id, @RequestBody Map<String, Double> request) {
+        Double amount = request.get("amount");
+        AccountDto accountDto = accountService.updateAccountBalance(id, amount);
         return ResponseEntity.ok(accountDto);
     }
 
